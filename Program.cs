@@ -19,7 +19,7 @@ builder.Services.AddDbContext<UserDbContext>(options => options.UseSqlServer(bui
 // Add Swagger for API documentation
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdvocateAPI", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "UsersAPi", Version = "v1" });
 });
 
 
