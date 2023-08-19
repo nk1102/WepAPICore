@@ -14,19 +14,19 @@ namespace WepAPICore.Repository
         }
 
         // This method is Used to get all the cases listed in the staticData.cs
-        public List<User> GetAllUsers()
+        public List<User> GetAllCases()
         {
             return _context.Users.ToList();
         }
         // this method is used to find the specific case id and display that in the Request
-        public User GetUserById(int Id)
+        public User GetUserById(int caseId)
         {
-            return _context.Users.FirstOrDefault(user => user.Id == Id);
+            return _context.Users.FirstOrDefault(user => user.CaseId == caseId);
         }
 
         public bool AddUser(User user)
         {
-            if (_context.Users.Any(u => u.Id == user.Id))
+            if (_context.Users.Any(u => u.CaseId == user.CaseId))
             {
                 return false;
             }
@@ -37,7 +37,7 @@ namespace WepAPICore.Repository
         public bool UpdateUserMobile(int caseId, string MobileNumber)
         {
             
-            User userToUpdate = _context.Users.FirstOrDefault(user => user.Id == caseId);
+            User userToUpdate = _context.Users.FirstOrDefault(user => user.CaseId == caseId);
 
             if (userToUpdate == null)
             {
@@ -55,7 +55,7 @@ namespace WepAPICore.Repository
 
         public bool RemoveUser(int caseId)
         {
-            User userToRemove = _context.Users.FirstOrDefault(user => user.Id == caseId);
+            User userToRemove = _context.Users.FirstOrDefault(user => user.CaseId == caseId);
 
             if (userToRemove == null)
             {

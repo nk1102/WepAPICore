@@ -8,9 +8,9 @@ namespace WepAPICore.Model
     {
             [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-            public int Id { get; set; }
-            public string Description { get; set; }
-            public string Date { get; set; }
+            public int CaseId { get; set; }
+            public string CaseDescription { get; set; }
+            public string CaseDate { get; set; }
             public string Name { get; set; }
             public string PhoneNumber { get; set; }
             public string EmailId { get; set; }

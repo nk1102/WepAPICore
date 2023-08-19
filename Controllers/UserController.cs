@@ -37,17 +37,17 @@ namespace WepAPICore.Controllers
         }
         
         [HttpGet]
-        [Route("GetAllUsers")]
-        public ActionResult<List<User>> GetAllUsers()
+        [Route("GetAllCases")]
+        public ActionResult<List<User>> GetAllCases()
         {
-            var cases = userRepository.GetAllUsers();
+            var cases = userRepository.GetAllCases();
             if (cases == null || cases.Count == 0)
             {
                 return StatusCode(500);
             }
             return cases;
         }
-        [HttpGet("GetClientById/{id}")]
+        [HttpGet("GetClientByCaseId/{id}")]
         public ActionResult<User> GetClientByCaseId(int id)
         {
             var user = userRepository.GetUserById(id);
