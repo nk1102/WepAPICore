@@ -11,8 +11,8 @@ using WepAPICore.Model;
 namespace WepAPICore.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20230729100513_New")]
-    partial class New
+    [Migration("20230819124849_Intial_Create")]
+    partial class Intial_Create
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,17 +26,17 @@ namespace WepAPICore.Migrations
 
             modelBuilder.Entity("WepAPICore.Model.User", b =>
                 {
-                    b.Property<int>("CaseId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CaseId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CaseDate")
+                    b.Property<string>("Date")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CaseDescription")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -52,7 +52,7 @@ namespace WepAPICore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CaseId");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });

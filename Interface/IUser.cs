@@ -6,7 +6,7 @@ namespace WepAPICore.Interface
     {
         bool AddUser(User user);
 
-        List<User> GetAllCases();
+        List<User> GetAllUsers();
 
         User GetUserById(int caseId);
 
